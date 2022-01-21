@@ -1,0 +1,108 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header ul{
+    list-style: none;
+}
+body{
+    background-color: #DCDCDC;
+}
+nav{
+    color: purple;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+   
+}
+
+header {
+	/*position: relative;*/
+	/*top: 0;*/
+	/*height: auto;*/
+	/*width: 100%;*/
+    display: flex;
+    justify-content: space-between;
+}
+
+.container{
+    text-align: center;
+}
+
+.container .name h1{
+    font-size: 60px;
+}
+
+.container .name h2{
+    font-size: 25px;
+}
+
+#about p{
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form{
+    width: 40%;
+    margin: 0 auto;
+}
+
+.form input{
+    width: 50%;
+}
+
+.form button{
+    width: 15%;
+}
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex div{
+    border: 1px solid #1C1C1C;
+    margin: 10px;
+}
+.flex img{
+    max-width: 100px;
+}
+
+/*#main-banner{
+   background-image: url(./imagem/banner.jpg);
+   background-size: cover;
+   background-position: 0 55%;
+   position: relative;
+   margin-top: 100px;
+}
+
+.div1{
+    max-width: 500px;
+    margin: auto;
+
+}
+
+.main-header {
+    text-align: center;
+  }
+
+  #login{
+      background-color: #4F4F4F;
+      color:#DCDCDC;
+  }
+
+  #registre{
+      background-color: #4F4F4F;
+      color:#DCDCDC;
+  }
+
+  .copy{
+      font-size: 12px;
+  }*/
