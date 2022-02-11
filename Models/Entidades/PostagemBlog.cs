@@ -8,8 +8,8 @@
         public string imagemCapa { get; set; }
 
         public string conteudo { get; set; }
-        public int gostei { get; set; } = 0;
-        public int naoGostei { get; set; }
+        public int? gostei { get; set; } = 0;
+        public int? naoGostei { get; set; } = 0;
 
         public DateTime dataPublicacao { get; set; }
 

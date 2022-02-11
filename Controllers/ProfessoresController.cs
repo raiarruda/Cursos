@@ -27,13 +27,9 @@ namespace Cursos.Controllers
         }
 
         // GET: Professores/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+          
             var professor = await _context.Professor
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (professor == null)
@@ -87,12 +83,9 @@ namespace Cursos.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,nome,titulo,sobre,foto,urlFacebook,urlTwitter,urlInstagram")] Professor professor)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,nome,titulo,sobre,foto,urlFacebook,urlTwitter,urlInstagram")] Professor professor)
         {
-            if (id != professor.Id)
-            {
-                return NotFound();
-            }
+           
 
             if (ModelState.IsValid)
             {
@@ -118,13 +111,9 @@ namespace Cursos.Controllers
         }
 
         // GET: Professores/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+          
             var professor = await _context.Professor
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (professor == null)
@@ -138,7 +127,7 @@ namespace Cursos.Controllers
         // POST: Professores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var professor = await _context.Professor.FindAsync(id);
             _context.Professor.Remove(professor);
@@ -146,7 +135,7 @@ namespace Cursos.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProfessorExists(string id)
+        private bool ProfessorExists(int id)
         {
             return _context.Professor.Any(e => e.Id == id);
         }

@@ -1,8 +1,11 @@
-﻿namespace Cursos.Models.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Cursos.Models.Entidades
 {
     public class Professor
     {
-        public string Id { get; set; }
+        [Key]
+        public int Id { get; set; }
         public string nome { get; set; }
         public string titulo { get; set; }
         public string sobre { get; set; }
