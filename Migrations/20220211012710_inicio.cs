@@ -49,8 +49,8 @@ namespace Cursos.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     conteudo = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    gostei = table.Column<int>(type: "int", nullable: false),
-                    naoGostei = table.Column<int>(type: "int", nullable: false),
+                    gostei = table.Column<int>(type: "int", nullable: true),
+                    naoGostei = table.Column<int>(type: "int", nullable: true),
                     dataPublicacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     autor = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
@@ -65,8 +65,8 @@ namespace Cursos.Migrations
                 name: "Professor",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "varchar(255)", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     nome = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     titulo = table.Column<string>(type: "longtext", nullable: false)

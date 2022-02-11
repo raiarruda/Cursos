@@ -1,7 +1,10 @@
-﻿namespace Cursos.Models.Entidades
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Cursos.Models.Entidades
 {
     public class Curso
     {
+        [Key]
         public int Id { get; set; }
         public string thumbnail { get; set; }
         public string nome { get; set; }

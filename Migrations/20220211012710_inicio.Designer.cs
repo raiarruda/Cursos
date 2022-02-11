@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Cursos.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20220210203233_inicio")]
+    [Migration("20220211012710_inicio")]
     partial class inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -99,14 +99,14 @@ namespace Cursos.Migrations
                     b.Property<DateTime>("dataPublicacao")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("gostei")
+                    b.Property<int?>("gostei")
                         .HasColumnType("int");
 
                     b.Property<string>("imagemCapa")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("naoGostei")
+                    b.Property<int?>("naoGostei")
                         .HasColumnType("int");
 
                     b.Property<string>("tituloPost")
@@ -120,8 +120,9 @@ namespace Cursos.Migrations
 
             modelBuilder.Entity("Cursos.Models.Entidades.Professor", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
                     b.Property<string>("foto")
                         .IsRequired()
