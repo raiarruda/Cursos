@@ -1,4 +1,4 @@
-﻿@model Cursos.Models.Entidades.Curso
+﻿@model Cursos.Models.ViewModels.CursoViewModel
 
 @{
     ViewData["Title"] = "Details";
@@ -48,6 +48,17 @@
         </dd>
     </dl>
 </div>
+
+@foreach(var item in Model.aulas)
+{
+    @*<p> @Html.DisplayFor(item => item.numeroOrdem)</p>*@
+
+       
+    <p>@item.numeroOrdem</p>
+    <p>@item.titulo</p>
+
+}
+
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>

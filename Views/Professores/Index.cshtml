@@ -9,63 +9,51 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.titulo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.sobre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.foto)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.urlFacebook)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.urlTwitter)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.urlInstagram)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.titulo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.sobre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.foto)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.urlFacebook)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.urlTwitter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.urlInstagram)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
+<div class="row">
+
+@foreach (var item in Model)
+{
+
+    <div class="card col m-3" style="width: 18rem;">
+        <img src=" @Html.DisplayFor(modelItem => item.foto)" class="card-img-top" alt="...">
+        <div  class="card-header">  @Html.DisplayFor(modelItem => item.nome)  </div>
+
+        <div class="card-body">
+            <p class="card-text"> @Html.DisplayFor(modelItem => item.sobre) </p>
+
+             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+             <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </div>
+    </div>
+
+    @*<tr>
+        <td>
+        
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.titulo)
+        </td>
+        <td>
+        
+        </td>
+        <td>
+       
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.urlFacebook)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.urlTwitter)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.urlInstagram)
+        </td>
+        <td>
+        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+        </td>
+        </tr>*@
 }
-    </tbody>
-</table>
+</div>

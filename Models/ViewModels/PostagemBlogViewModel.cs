@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Cursos.Models.Entidades;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cursos.Models.ViewModels
@@ -19,5 +20,7 @@ namespace Cursos.Models.ViewModels
         public DateTime dataPublicacao { get; set; } = DateTime.Now;
         [DisplayName("Autor da Postagem")]
         public string autor { get; set; }
+
+        
     }
 }

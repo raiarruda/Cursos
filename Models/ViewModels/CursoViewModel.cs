@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Cursos.Models.Entidades;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Cursos.Models.ViewModels
@@ -18,5 +19,7 @@ namespace Cursos.Models.ViewModels
         public string publicoAlvo { get; set; }
         [DisplayName("Carga Horária")]
         public int cargaHoraria { get; set; }
+
+        public IEnumerable<Aula> aulas { get; set; }
     }
 }

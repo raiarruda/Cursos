@@ -30,6 +30,16 @@ namespace Cursos.Data
                 optionsBuilder.UseMySql(connection, Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql"));
             }
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.UseCollation("utf8mb4_0900_ai_ci")
+                .HasCharSet("utf8mb4");
+
+            modelBuilder.Entity<Curso>().HasMany(a => a.Aulas)
+                .WithOne(c => c.curso)
+                .OnDelete(DeleteBehavior.Cascade);
+
+        }
 
     }
 }

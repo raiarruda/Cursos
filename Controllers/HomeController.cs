@@ -24,7 +24,7 @@ namespace Cursos.Controllers
             HomeViewModel homeViewModel = new HomeViewModel();
 
             List<Curso> cursos = _context.Curso.ToList();
-            List<PostagemBlog> postagens = _context.PostagemBlogs.ToList();
+            List<PostagemBlog> postagens = _context.PostagemBlogs.OrderByDescending(p=>p.dataPublicacao).ToList();
 
             homeViewModel.Cursos = _mapper.Map<List<CursoViewModel>>(cursos);
             homeViewModel.Postagens = _mapper.Map<List<PostagemBlogViewModel>>(postagens);

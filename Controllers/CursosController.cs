@@ -8,16 +8,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Cursos.Data;
 using Cursos.Models.Entidades;
+using AutoMapper;
+using Cursos.Models.ViewModels;
 
 namespace Cursos.Controllers
 {
     public class CursosController : Controller
     {
         private readonly Context _context;
-
-        public CursosController(Context context)
+        private readonly IMapper _mapper;
+        public CursosController(Context context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: Cursos
@@ -29,19 +32,34 @@ namespace Cursos.Controllers
         // GET: Cursos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+           
+
+
             if (id == null)
             {
                 return NotFound();
             }
 
-            var curso = await _context.Curso
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var curso = await _context.Curso.FirstOrDefaultAsync(m => m.Id == id);
+            CursoViewModel cursoViewModel = new CursoViewModel();
+            List<Aula> aulasCurso = _context.Aula.Where(c => c.cursoId == id).ToList();
+
             if (curso == null)
             {
                 return NotFound();
             }
 
-            return View(curso);
+            cursoViewModel.Id = curso.Id;
+            cursoViewModel.thumbnail=curso.thumbnail;
+            cursoViewModel.nome = curso.nome;
+            cursoViewModel.resumo = curso.resumo;
+            cursoViewModel.descricao = curso.descricao;
+            cursoViewModel.cargaHoraria = curso.cargaHoraria;
+            cursoViewModel.publicoAlvo = curso.publicoAlvo;
+            cursoViewModel.aulas = aulasCurso;
+
+
+            return View(cursoViewModel);
         }
 
         // GET: Cursos/Create

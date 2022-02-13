@@ -23,7 +23,7 @@ namespace Cursos.Controllers
         // GET: PostagensBlog
         public async Task<IActionResult> Index()
         {
-            return View(await _context.PostagemBlogs.ToListAsync());
+            return View(await _context.PostagemBlogs.OrderByDescending(p=>p.dataPublicacao).ToListAsync());
         }
 
         // GET: PostagensBlog/Details/5
