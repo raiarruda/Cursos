@@ -283,7 +283,99 @@ body {
     .blog-page .single_post .footer {
         padding: 30px
     }
-      
-
-    
 }
+    header.masthead_cursos {
+        position: relative;
+        margin-bottom: 0.5rem;
+        padding-top: calc(1.5rem + 55px);
+        padding-bottom: 5.5rem;
+        background: no-repeat center center;
+        background-size: cover;
+        background-attachment: scroll;
+         /*background-image: url(/img/cursos.jpg)*/
+    }
+header.masthead_cursos:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #212529;
+    opacity: 0.25;
+}
+
+
+        header.masthead_cursos .subheading_cursos,
+        header.masthead_cursos .subheading_cursos {
+            font-size: 1.5rem;
+            font-weight: 3;
+            color: #FAFAD2;
+            line-height: 1.1;
+            display: block;
+            margin-top: 0.65rem;
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+             header.masthead_cursos .post-heading .subheading_cursos {
+            font-size: 1.5rem;
+            font-weight: 6;
+            margin: 0.5rem 0 2rem;
+            font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+        header.masthead_cursos .post-heading .meta {
+            font-size: 1.25rem;
+            font-weight: 300;
+            font-style: italic;
+            font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+
+
+header.masthead_blog {
+    position: relative;
+    margin-bottom: 0.5rem;
+    padding-top: calc(1.5rem + 55px);
+    padding-bottom: 5.5rem;
+    background: no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    /*background-image: url(/img/cursos.jpg)*/
+}
+
+    header.masthead_blog:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #212529;
+        opacity: 0.25;
+    }
+
+
+    header.masthead_blog .subheading_cursos,
+    header.masthead_blog .subheading_cursos {
+        font-size: 1.5rem;
+        font-weight: 3;
+        color: #FAFAD2;
+        line-height: 1.1;
+        display: block;
+        margin-top: 0.65rem;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    header.masthead_blog .post-heading .subheading_cursos {
+        font-size: 1.5rem;
+        font-weight: 6;
+        margin: 0.5rem 0 2rem;
+        font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
+
+    header.masthead_blog .post-heading .meta {
+        font-size: 1.25rem;
+        font-weight: 300;
+        font-style: italic;
+        font-family: "Lora", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    }
