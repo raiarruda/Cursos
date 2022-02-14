@@ -1,15 +1,16 @@
 ﻿
 using Cursos.Models.Entidades;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cursos.Data
 {
-    public class Context: DbContext
+    public class Context: IdentityDbContext<Usuario>
 
     {
         IConfiguration _configuration;
 
-        public Context(IConfiguration configuration)
+        public Context(IConfiguration configuration) 
         {
             _configuration = configuration;
         }
@@ -30,16 +31,13 @@ namespace Cursos.Data
                 optionsBuilder.UseMySql(connection, Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.27-mysql"));
             }
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.UseCollation("utf8mb4_0900_ai_ci")
-                .HasCharSet("utf8mb4");
-
-            modelBuilder.Entity<Curso>().HasMany(a => a.Aulas)
-                .WithOne(c => c.curso)
-                .OnDelete(DeleteBehavior.Cascade);
-
+            base.OnModelCreating(modelBuilder);
+            
         }
+
 
     }
 }

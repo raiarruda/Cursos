@@ -12,6 +12,6 @@ namespace Cursos.Models.Entidades
         
         public int cursoId { get; set; }
 
-        public virtual Curso curso { get; set; }
+        public virtual Curso? curso { get; set; }
     }
 }
