@@ -4,6 +4,10 @@
     ViewData["Title"] = "Cursos";
 }
 
+<<<<<<< Updated upstream
+=======
+<h1>Cursos</h1>
+>>>>>>> Stashed changes
 
 
 <header class="masthead_cursos" style="background-image: url('img/cursos.jpg')">>
@@ -20,9 +24,13 @@
 
 <h1>Cursos</h1>
 
+<<<<<<< Updated upstream
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+=======
+<div class="card m-3 col" style="max-width: 540px;">
+>>>>>>> Stashed changes
 
 <div class="row">
 @foreach (var item in Model) 
@@ -30,6 +38,7 @@
 <div class="card m-3 col" style="max-width: 540px;">
  <div class="col">
       <img src="@Html.DisplayFor(modelItem => item.thumbnail)" class="img-fluid rounded-start" alt="...">
+<<<<<<< Updated upstream
  </div>
     <div class="col">
       <div class="card-body">
@@ -38,6 +47,15 @@
         <p class="card-text"><a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Veja mais</a> |</p>
         
       </div>
+=======
+    </div>
+        <div class="col">
+             <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.nome)</h5>
+                 <p class="card-text">@Html.DisplayFor(modelItem => item.resumo)</p>
+                   <p class="card-text"><a  class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Veja mais</a> |</p>
+              </div>
+>>>>>>> Stashed changes
     </div>
 </div>
 }
