@@ -1,10 +1,17 @@
 ﻿@model IEnumerable<Cursos.Models.Entidades.Curso>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cursos";
 }
 
-<h1>Index</h1>
+<h1>Cursos</h1>
+
+<div class="container_blog">
+
+
+
+
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,16 +20,15 @@
 @foreach (var item in Model) {
 
 
-<div class="card mb-3" style="max-width: 540px;">
-
-    <div class="col-md-4">
+<div class="card m-3 col" style="max-width: 540px;">
+ <div class="col">
       <img src="@Html.DisplayFor(modelItem => item.thumbnail)" class="img-fluid rounded-start" alt="...">
-    </div>
+ </div>
     <div class="col">
       <div class="card-body">
         <h5 class="card-title">@Html.DisplayFor(modelItem => item.nome)</h5>
         <p class="card-text">@Html.DisplayFor(modelItem => item.resumo)</p>
-        <p class="card-text"><a  class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Veja mais</a> |</p>
+        <p class="card-text"><a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Veja mais</a> |</p>
         
       </div>
     </div>

@@ -1,10 +1,43 @@
 ﻿@model IEnumerable<Cursos.Models.Entidades.PostagemBlog>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "BLOG";
 }
 
-<h1>Index</h1>
+<h1>BLOG</h1>
+
+
+
+<div id="main-content" class="blog-page">
+    <div class="container">
+        <div class="row clearfix">
+            @foreach (var item in Model)
+            {
+                <div class="card m-3 col" style="max-width: 540px;">
+                    <div class="col">
+                        <div class="body">
+                            <div class="img-post">
+                                <img class="d-block img-fluid" src="@Html.DisplayFor(modelItem => item.imagemCapa)" alt="First slide">
+                            </div>
+                            <h3><a href="blog-details.html">@Html.DisplayFor(modelItem => item.tituloPost)</a></h3>
+                            <p> @Html.DisplayFor(modelItem => item.conteudo)</p>
+                        </div>
+                        <div class="footer">
+                            <div class="actions">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info btn-sm">Detalhes</a>
+                            </div>
+                            <ul class="stats">
+                                @*<li><a href="javascript:void(0);">General</a></li>
+                                <li><a href="javascript:void(0);" class="fa fa-heart">28</a></li>
+                                <li><a href="javascript:void(0);" class="fa fa-comment">128</a></li>*@
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -74,33 +107,3 @@
 
 
 
-<div id="main-content" class="blog-page">
-    <div class="container">
-        <div class="row clearfix">
-            @foreach (var item in Model)
-            {
-                <div class="col-lg-8 col-md-12 left-box">
-                    <div class="card single_post">
-                        <div class="body">
-                            <div class="img-post">
-                                <img class="d-block img-fluid" src="@Html.DisplayFor(modelItem => item.imagemCapa)" alt="First slide">
-                            </div>
-                            <h3><a href="blog-details.html">@Html.DisplayFor(modelItem => item.tituloPost)</a></h3>
-                            <p> @Html.DisplayFor(modelItem => item.conteudo)</p>
-                        </div>
-                        <div class="footer">
-                            <div class="actions">
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-secondary">Detalhes</a>
-                            </div>
-                            <ul class="stats">
-                                <li><a href="javascript:void(0);">General</a></li>
-                                <li><a href="javascript:void(0);" class="fa fa-heart">28</a></li>
-                                <li><a href="javascript:void(0);" class="fa fa-comment">128</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-</div>

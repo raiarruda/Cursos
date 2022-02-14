@@ -47,8 +47,8 @@ body {
     }
 
 .single_post {
-    -webkit-transition: all .4s ease;
-    transition: all .4s ease
+    /*-webkit-transition: all .4s ease;
+    transition: all .4s ease*/
 }
 
     .single_post .body {
